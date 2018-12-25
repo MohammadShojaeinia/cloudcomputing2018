@@ -1,0 +1,7 @@
+ir/shojaeinia/repositories/SentenceRepository.class
+ir/shojaeinia/models/Sentence.class
+ir/shojaeinia/services/SentenceService.class
+ir/shojaeinia/Application.class
+ir/shojaeinia/controllers/IndexController.class
+ir/shojaeinia/controllers/SentenceController.class
+ir/shojaeinia/services/impl/SentenceServiceImpl.class

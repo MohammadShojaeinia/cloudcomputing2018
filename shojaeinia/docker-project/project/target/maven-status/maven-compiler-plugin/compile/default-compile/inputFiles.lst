@@ -1,0 +1,7 @@
+/app/project/src/main/java/ir/shojaeinia/controllers/IndexController.java
+/app/project/src/main/java/ir/shojaeinia/repositories/SentenceRepository.java
+/app/project/src/main/java/ir/shojaeinia/services/impl/SentenceServiceImpl.java
+/app/project/src/main/java/ir/shojaeinia/services/SentenceService.java
+/app/project/src/main/java/ir/shojaeinia/Application.java
+/app/project/src/main/java/ir/shojaeinia/models/Sentence.java
+/app/project/src/main/java/ir/shojaeinia/controllers/SentenceController.java

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.jqueryui.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $('#example').DataTable({
+                    "ajax": {
+                        url: "/sentence/list",
+                        success: function (data) {
+                            $.each(data, function (i, item) {
+                                $('#example').dataTable().fnAddData([
+                                    data[i].id,
+                                    data[i].content
+                                ]);
+                            })
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>List</button>
+
+    <table id="example" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+    </table>
+
+</body>
+
+</html>
