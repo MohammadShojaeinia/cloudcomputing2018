@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  influxDB:
+    image: "influxdb"
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+    volumes:
+      - ./influxdb_files:/var/lib/influxdb
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+
+  kinesis:
+    image: "vsouza/kinesis-local:latest"
+    command: --port 4567
+    restart: always
+    ports:
+      - 4567:4567
+
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    expose:
+      - "1883"
+      - "9001"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./docker-mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - default
